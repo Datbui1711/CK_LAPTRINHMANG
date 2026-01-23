@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    },
+    "scripts": {
+        "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\""
+=======
     "name": "server",
     "version": "1.0.0",
     "main": "index.js",
@@ -26,5 +33,6 @@
     },
     "devDependencies": {
         "nodemon": "^3.1.10"
+>>>>>>> 0b409ce1f43de62d14babe5099519cd5dd36664f
     }
 }
