@@ -1,0 +1,142 @@
+.toast-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid;
+    pointer-events: auto;
+    min-width: 300px;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast-success {
+    border-left-color: #10b981;
+}
+
+.toast-success .toast-icon {
+    color: #10b981;
+}
+
+.toast-error {
+    border-left-color: #ef4444;
+}
+
+.toast-error .toast-icon {
+    color: #ef4444;
+}
+
+.toast-warning {
+    border-left-color: #f59e0b;
+}
+
+.toast-warning .toast-icon {
+    color: #f59e0b;
+}
+
+.toast-info {
+    border-left-color: #3b82f6;
+}
+
+.toast-info .toast-icon {
+    color: #3b82f6;
+}
+
+.toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.toast-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1f2937;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.toast-message {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.toast-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    margin-top: -2px;
+    margin-right: -4px;
+}
+
+.toast-close:hover {
+    color: #6b7280;
+    background-color: #f3f4f6;
+}
+
+.toast-enter {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-exit {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in;
+}
+
+.toast-container-top-left .toast-item,
+.toast-container-bottom-left .toast-item {
+    transform: translateX(-100%);
+}
+
+.toast-container-top-left .toast-enter,
+.toast-container-bottom-left .toast-enter {
+    transform: translateX(0);
+}
+
+.toast-container-top-left .toast-exit,
+.toast-container-bottom-left .toast-exit {
+    transform: translateX(-100%);
+}
+
+.toast-container-top-center .toast-item,
+.toast-container-bottom-center .toast-item {
+    transform: translateY(-100%);
+}
+
+.toast-container-top-center .toast-enter,
+.toast-container-bottom-center .toast-enter {
+    transform: translateY(0);
+}
+
+.toast-container-top-center .toast-exit {
+    transform: translateY(-100%);
+}
+
+.toast-container-bottom-center .toast-exit {
+    transform: translateY(100%);
+}
+
+@media (max-width: 640px) {
+    .toast-item {
+        min-width: auto;
+        max-width: none;
+    }
+}
