@@ -1,0 +1,547 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    background: var(--color-bg-primary);
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.closeButton {
+    background: var(--color-bg-secondary);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: var(--transition-base);
+}
+
+.closeButton:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+}
+
+.tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.tab {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: var(--transition-base);
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+}
+
+.tab.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.content {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.subTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.input,
+.textarea {
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    font-family: inherit;
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: var(--transition-base);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input:disabled,
+.textarea:disabled {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    font-size: 16px;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.checkboxLabel > input {
+    margin-top: 2px;
+}
+
+.helpText {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-xs);
+    margin-left: 28px;
+    line-height: 1.4;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.rangeInput {
+    width: 100%;
+    height: 6px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-tertiary);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    cursor: pointer;
+}
+
+.rangeInput::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+}
+
+.saveButton {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--gradient-button);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-colored);
+    align-self: flex-start;
+}
+
+.saveButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.saveButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.addMemberSection {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.searchIcon {
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: var(--transition-base);
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.availableFriends {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.friendCard {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.friendAvatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.friendAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}
+
+.friendInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.friendName {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.friendEmail {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+}
+
+.addButton {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: var(--transition-base);
+}
+
+.addButton:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.addButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.membersList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.memberCard {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.memberCard:hover {
+    background: var(--color-bg-tertiary);
+}
+
+.memberAvatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.memberAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}
+
+.memberInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.memberName {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.memberEmail {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+}
+
+.creatorBadge,
+.adminBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.creatorBadge {
+    background: rgba(168, 85, 247, 0.1);
+    color: var(--color-secondary);
+}
+
+.adminBadge {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--color-primary);
+}
+
+.memberActions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.toggleAdminButton,
+.removeButton {
+    padding: var(--spacing-sm);
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    color: var(--color-text-secondary);
+}
+
+.toggleAdminButton:hover:not(:disabled) {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.removeButton:hover:not(:disabled) {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+.toggleAdminButton:disabled,
+.removeButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.emptyText {
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text-tertiary);
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.leaveButton,
+.deleteButton {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: var(--transition-base);
+}
+
+.leaveButton {
+    background: var(--color-warning);
+    color: white;
+}
+
+.leaveButton:hover:not(:disabled) {
+    background: #d97706;
+    transform: translateY(-2px);
+}
+
+.deleteButton {
+    background: var(--color-error);
+    color: white;
+}
+
+.deleteButton:hover:not(:disabled) {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.leaveButton:disabled,
+.deleteButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Scrollbar */
+.availableFriends::-webkit-scrollbar {
+    width: 6px;
+}
+
+.availableFriends::-webkit-scrollbar-track {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.availableFriends::-webkit-scrollbar-thumb {
+    background: var(--color-border-dark);
+    border-radius: var(--radius-sm);
+}
+
+.availableFriends::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-tertiary);
+}
+
