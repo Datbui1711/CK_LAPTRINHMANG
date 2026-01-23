@@ -1,0 +1,152 @@
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+}
+
+.avatarContainer {
+    position: relative;
+    margin-right: 16px;
+}
+
+.friend-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0084ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.status {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.online {
+    background-color: #10b981;
+}
+
+.offline {
+    background-color: #9ca3af;
+}
+
+.busy {
+    background-color: #ef4444;
+}
+
+.info {
+    flex: 1;
+}
+
+.name {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.email {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.expandIcon {
+    color: #9ca3af;
+    transition: transform 0.3s ease;
+}
+
+.expanded .expandIcon {
+    transform: rotate(180deg);
+}
+
+.expandedContent {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+    animation: fadeIn 0.3s ease;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: #f9fafb;
+    border: none;
+    border-radius: 8px;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.details {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.lastActive {
+    margin: 0;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    .actionButton {
+        width: 100%;
+    }
+}
