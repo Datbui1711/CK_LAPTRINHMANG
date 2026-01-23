@@ -1,0 +1,188 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+    background: var(--color-bg-primary);
+    overflow: hidden;
+    border-radius: 0;
+    /* Tối ưu rendering */
+    will-change: contents;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transition: opacity var(--transition-fast);
+}
+
+.chat-sidebar {
+    width: 320px;
+    background: var(--color-bg-primary);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    /* Tối ưu rendering */
+    will-change: contents;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transition: opacity var(--transition-fast);
+}
+
+.chat-sidebar::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+}
+
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-secondary);
+    position: relative;
+    /* Tối ưu transitions */
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    will-change: contents;
+}
+
+.select-friend-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--gradient-soft);
+    animation: fadeIn 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.select-friend-prompt::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.prompt-icon {
+    font-size: 80px;
+    margin-bottom: var(--spacing-xl);
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 8px 16px rgba(99, 102, 241, 0.2));
+    position: relative;
+    z-index: 1;
+}
+
+.select-friend-prompt h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.no-more-messages-minimal {
+    text-align: center;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) var(--spacing-xl);
+    color: var(--color-text-tertiary);
+    font-size: 13px;
+    font-style: italic;
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-lg);
+}
+
+.no-more-messages-badge {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .chat-sidebar {
+        width: 100%;
+        height: 30vh;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-md);
+    }
+
+    .chat-main {
+        height: 70vh;
+    }
+
+    .select-friend-prompt {
+        padding: var(--spacing-xl);
+    }
+
+    .prompt-icon {
+        font-size: 64px;
+    }
+
+    .select-friend-prompt h2 {
+        font-size: 24px;
+    }
+}
